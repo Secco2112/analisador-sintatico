@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Analisador Sintático</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="assets/css/main.css" >
+</head>
+<body>
+    <main class="main_wrapper">
+        <div class="content">
+            <div class="main_menu">
+                <ul class="list">
+                    <li id="info">Informações</li>
+                    <li class="active" id="parser">Analisador</li>
+                </ul>
+            </div>
+            <div id="info" class="wrapper active">
+                <div class="header">
+                    <form id="sentence_form">
+                        <div class="row">
+                            <div class="form-group sentence_input col-6">
+                                <input class="form-control" id="sentece" name="sentence" placeholder="Insira ou gere uma sentença..." />
+                                <i class="generate_random_sentence fa fa-random"></i>
+                            </div>
+                            <div class="form-group sentente_size col-6">
+                                <label>Tamanho da sentença: </label>
+                                <div id="slider_sentence_size"></div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="parser_table">
+                    <div class="wrapper">
+                        <div class="left_content">
+                            <table class="table parsed_table">
+                                <thead>
+                                    <th>Pilha</th>
+                                    <th>Buffer</th>
+                                    <th>Ação</th>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                        <div class="right_content">
+                            <div class="buttons_options">
+                                <button class="btn btn-success btn-direct"><i class="fa fa-play"></i> Executar</button>
+                                <div class="step">
+                                    <button class="btn btn-primary btn-step-by-step"><i class="fa fa-play"></i> Passo-a-passo</button>
+                                    <button disabled class="btn btn-primary btn-next-step"><i class="fa fa-play"></i> Próximo passo</button>
+                                </div>
+                                <button class="btn btn-danger btn-restart"><i class="fa fa-refresh"></i> Reiniciar</button>
+                            </div>
+
+                            <div class="sentence_items"></div>
+
+                            <div class="generated-table">
+                                <table class="table">
+                                    <tr>
+                                        <th>#</th>
+                                        <th>a</th>
+                                        <th>b</th>
+                                        <th>c</th>
+                                        <th>$</th>
+                                    </tr>
+            
+                                    <tr >
+                                        <th>S</th>
+                                        <td id="Sa">S->aBc</td>
+                                        <td>-</td>
+                                        <td id="Sc">S->cCb</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr >
+                                        <th>A</th>
+                                        <td>-</td>
+                                        <td id="Ab">A->bCc</td>
+                                        <td id="Ac">A->cB</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <th>B</th>
+                                        <td>-</td>
+                                        <td id="Bb">B->baA</td>
+                                        <td id="Bc">B->E</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <th>C</th>
+                                        <td id="Ca">C->aAc</td>
+                                        <td>-</td>
+                                        <td id="Cc">C->caS</td>
+                                        <td>-</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="grammar-table">
+                                <table class="table">
+                                    <tr>
+                                        <th>S::=</th>
+                                        <td>aBc</td>
+                                        <td>-</td>
+                                        <td>cCb</td>
+                                    </tr>
+                                    <tr>
+                                        <th>A::=</th>
+                                        <td>-</td>
+                                        <td>bCc</td>
+                                        <td>cB</td>
+                                    </tr>
+                                    <tr>
+                                        <th>B::=</th>
+                                        <td>-</td>
+                                        <td>baA</td>
+                                        <td>&epsilon;</td>
+                                    </tr>
+                                    <tr>
+                                        <th>C::=</th>
+                                        <td>aAc</td>
+                                        <td>-</td>
+                                        <td>caS</td>
+                                    </tr>  
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="assets/js/Parser.class.js"></script>
+    <script src="assets/js/main.js"></script>
+</html>

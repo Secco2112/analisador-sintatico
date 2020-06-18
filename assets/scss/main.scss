@@ -1,0 +1,213 @@
+body{
+    min-height: 100vh;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f9f9;
+    *{
+        font-family: "Montserrat", sans-serif;
+    }
+    .main_wrapper{
+        height: 100%;
+        width: 100%;
+        .content{
+            max-width: 1270px;
+            width: 100%;
+            border: 1px solid #c3c3c3;
+            margin: 60px auto;
+            padding: 20px;
+            background-color: #fff;
+            .main_menu{
+                display: none;
+                border-bottom: 1px solid #e2e2e2;
+                padding-bottom: 20px;
+                .list{
+                    display: flex;
+                    align-items: center;
+                    list-style-type: none;
+                    li{
+                        cursor: pointer;
+                        margin-right: 25px;
+                        position: relative;
+                        color: #656565;
+                        &:after{
+                            content: "";
+                            display: block;
+                            position: absolute;
+                            border: none;
+                            background-color: #656565;
+                            width: 0px;
+                            height: 2px;
+                            bottom: -5px;
+                            transition: 0.2s all ease-in-out;
+                        }
+                        &:hover{
+                            &:after{
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+            > .wrapper{
+                margin-top: 20px;
+                &#info{
+                    .header{
+                        #sentence_form{
+                            .row{
+                                align-items: center;
+                                .sentence_input{
+                                    position: relative;
+                                    i{
+                                        position: absolute;
+                                        color: #656565;
+                                        cursor: pointer;
+                                        right: 30px;
+                                        top: 11px;
+                                    }
+                                }
+                                .sentente_size{
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: space-between;
+                                    label{
+                                        width: 340px;
+                                        margin: 0;
+                                    }
+                                    #slider_sentence_size{
+                                        width: 100%;
+                                        height: 3px;
+                                        background-color: #e3e3e3;
+                                        border: none;
+                                        border-radius: 0px;
+                                        .ui-widget-header{
+                                            background: #bdbdbd;
+                                        }
+                                        span{
+                                            height: 15px;
+                                            width: 15px;
+                                            border: 2px solid #cbcbcb;
+                                            border-radius: 100%;
+                                            background: white;
+                                            top: -6.5px;
+                                            cursor: pointer;
+                                            display: flex;
+                                            justify-content: center;
+                                            align-items: center;
+                                            outline: none;
+                                            &:after{
+                                                content: attr(data-content);
+                                                position: absolute;
+                                                top: -20px;
+                                                color: #616562;
+                                                font-size: 13px;
+                                                font-family: Montserrat;
+                                                font-weight: 500;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .parser_table{
+                        margin-top: 50px;
+                        position: sticky;
+                        top: 30px;
+                        .wrapper{
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: baseline;
+                            .left_content{
+                                width: 58%;
+                            }
+                            .right_content{
+                                width: 36%;
+                                position: sticky;
+                                top: 30px;
+                                .buttons_options{
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: baseline;
+                                    .step{
+                                        display: flex;
+                                        flex-direction: column;
+                                        justify-content: center;
+                                        .btn-next-step{
+                                            opacity: 0;
+                                            visibility: hidden;
+                                            height: 0;
+                                            margin-top: 15px;
+                                            &.active{
+                                                opacity: 1;
+                                                visibility: visible;
+                                                height: auto;
+                                            }
+                                        }
+                                    }
+                                    button{
+                                        margin: 0 9px;
+                                        font-size: 14px;
+                                    }
+                                }
+                                .sentence_items{
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    flex-wrap: wrap;
+                                    list-style-type: none;
+                                    margin: 40px 0;
+                                    .sentence_item{
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        width: 35px;
+                                        height: 35px;
+                                        border: 1px solid #c3c3c3;
+                                        &:not(:last-child){
+                                            border-right: none;
+                                        }
+                                        a{
+                                            display: flex;
+                                            justify-content: center;
+                                            align-items: center;
+                                            width: 100%;
+                                            height: 100%;
+                                            transition: 0.2s all ease-in-out;
+                                            &.highlight{
+                                                background-color: #e8e8e8;
+                                            }
+                                        }
+                                    }
+                                }
+                                table{
+                                    td, th{
+                                        text-align: center;
+                                    }
+                                }
+                                .generated-table{
+                                    table{
+                                        tbody{
+                                            tr{
+                                                td{
+                                                    transition: 0.2s all ease-in-out;
+                                                    &.highlight{
+                                                        background-color: #e8e8e8;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                .grammar-table{
+                                    margin-top: 50px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
