@@ -69,9 +69,8 @@ function not_step_parser() {
     var first_it = true;
 
     function direct_parser() {
-        parser.parse();
-
         if(first_it) {
+            parser.sentence = $("input#sentence").val();
             parser.buildSentenceLine();
 
             $("input#sentece").attr("disabled", "disabled");
@@ -81,6 +80,8 @@ function not_step_parser() {
 
             first_it = false;
         }
+
+        parser.parse();
 
         if(parser.parse_finish == false) {
             setTimeout(direct_parser, parser.STEP_TIMEOUT);
@@ -111,6 +112,8 @@ function step_parser() {
         $(".btn-direct").attr("disabled", "disabled");
         $(".btn-step-by-step").attr("disabled", "disabled");
         $(".btn-next-step").addClass("active").removeAttr("disabled").css("opacity", "1");
+
+        parser.sentence = $("input#sentence").val();
 
         parser.buildSentenceLine();
 
