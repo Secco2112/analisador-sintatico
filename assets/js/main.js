@@ -108,12 +108,12 @@ function not_step_parser() {
 
 function step_parser() {
     $(".btn-step-by-step").on("click", function() {
+        parser.sentence = $("input#sentence").val();
+
         $("input#sentece").attr("disabled", "disabled");
         $(".btn-direct").attr("disabled", "disabled");
         $(".btn-step-by-step").attr("disabled", "disabled");
         $(".btn-next-step").addClass("active").removeAttr("disabled").css("opacity", "1");
-
-        parser.sentence = $("input#sentence").val();
 
         parser.buildSentenceLine();
 
