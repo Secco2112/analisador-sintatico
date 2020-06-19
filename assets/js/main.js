@@ -73,7 +73,7 @@ function not_step_parser() {
             parser.sentence = $("input#sentence").val();
             parser.buildSentenceLine();
 
-            $("input#sentece").attr("disabled", "disabled");
+            $("input#sentence").attr("disabled", "disabled");
             $(".btn-direct").attr("disabled", "disabled");
             $(".btn-step-by-step").attr("disabled", "disabled");
             $(".btn-next-step").removeClass("active").attr("disabled", "disabled");
@@ -110,7 +110,7 @@ function step_parser() {
     $(".btn-step-by-step").on("click", function() {
         parser.sentence = $("input#sentence").val();
 
-        $("input#sentece").attr("disabled", "disabled");
+        $("input#sentence").attr("disabled", "disabled");
         $(".btn-direct").attr("disabled", "disabled");
         $(".btn-step-by-step").attr("disabled", "disabled");
         $(".btn-next-step").addClass("active").removeAttr("disabled").css("opacity", "1");
@@ -136,7 +136,7 @@ function step_parser() {
 
 function reset() {
     $(".btn-restart").on("click", function() {
-        $("input#sentece").removeAttr("disabled").val("");
+        $("input#sentence").removeAttr("disabled").val("");
         $(".btn-direct").removeAttr("disabled");
         $(".btn-step-by-step").removeAttr("disabled");
         $(".btn-next-step").removeClass("active").attr("disabled", "disabled").css("opacity", "1");
