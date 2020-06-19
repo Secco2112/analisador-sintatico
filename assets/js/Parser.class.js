@@ -127,7 +127,20 @@ class Parser{
 
         $(".parser_table .parsed_table tbody").append(line);
         // Scroll para final da página
-        $("html, body").animate({ scrollTop: $(document).height() }, 1);
+        if($(".left_content").height() == $(".parser_table .wrapper").height()) {
+            $("html, body").animate({ scrollTop: $(document).height() }, 200);
+        }
+    }
+
+    reset() {
+        this.parser_counter = 0;
+        this.parser_symbol_counter = 0;
+        this.sentence = "";
+        this.symbol = "";
+        this.state = "S";
+        this.parse_finish = false;
+        this.is_mark = false;
+        this.old_match = "";
     }
 
 }
