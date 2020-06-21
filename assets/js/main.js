@@ -9,8 +9,9 @@ parser.setParserConfig({
         2: "cB"
     },
     "B": {
-        1: "baA",
-        2: ""
+        1: "aC",
+        2: "baA",
+        3: ""
     },
     "C": {
         1: "aAc",

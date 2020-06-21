@@ -71,7 +71,7 @@ class Parser{
             symbol = this.sentence[0],
             line = "<tr><td>$" + this.state + "</td><td>" + this.sentence + "$</td>";
 
-            this.parser_counter++;
+        this.parser_counter++;
 
         if(state == symbol) {
             this.state = this.state.substring(0, this.state.length-1);
@@ -100,7 +100,7 @@ class Parser{
                 this.is_mark = true;
 
                 if(id.length == 0) {
-                    line += "<td>Erro em " + this.parser_counter + "</td> </tr>";
+                    line += "<td>Erro em " + this.parser_counter + " iterações</td> </tr>";
 
                     $("#symbol" + this.parser_symbol_counter + " a").addClass("highlight");
 
