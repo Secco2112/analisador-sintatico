@@ -94,7 +94,7 @@ function not_step_parser() {
 
         Swal.fire({
             title: 'Tempo para etapa',
-            content: 'teste',
+            text: 'Digite o tempo que cada etapa irá durar (em segundos).',
             input: 'text',
             showCancelButton: true
         }).then((handle) => {
